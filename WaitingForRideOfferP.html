@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting for Ride Offer</title>
+    <link rel="stylesheet" href="styleP.css">
+    <style>
+        body {
+            background-color: #e8f1f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .center-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            width: 100vw;
+        }
+        .waiting-box {
+            width: 480px;
+            padding: 55px 40px;
+            background: #f6fcff;
+            border: 1px solid #000000;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .waiting-text {
+            font-size: 17px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .cancel-btn {
+            background-color: #6a6a6a;
+            color: white;
+            padding: 12px 35px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px; 
+            border: 1px solid #333333; 
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+        .cancel-btn:hover {
+            background-color: #494949;
+            text-decoration: underline;
+            
+        }
+        .sim-link {
+            display: inline-block;
+            color: #255483;
+            text-decoration: underline;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .sim-link:hover {
+            color: #255483;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="center-wrapper">
+        <div class="waiting-box">
+            <p class="waiting-text">Waiting for nearby driver to offer you a ride.... 🔄</p>
+            
+            <button type="button" class="cancel-btn" onclick="window.location.href='ChooseAMethod.html';">Cancel</button>
+            
+            <div>
+                <a class="sim-link" href="IncomingRideOfferP.php">If passenger receives ride offer</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

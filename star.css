@@ -1,0 +1,14 @@
+.star-rating {
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgba(106, 106, 106, 0.525);
+    display: inline-block;
+}
+
+.star-rating .star.hover {
+    color: #ffcc00; 
+}
+
+.star-rating .star.selected {
+    color: #d49100; 
+}

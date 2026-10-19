@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login In Page</title>
+    <link rel="stylesheet" href="styleR.css">
+
+</head>
+<body>
+    <div class="login-container">
+        <h2>Account Login</h2>
+        <form action="LoginPage.php" method="POST">
+
+            <div>
+                <label for="inputEmail">Email:</label><br>
+                <input type="text" id="inputEmail" name="inputEmail" required>
+            </div>
+            <br>
+            <div>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <br>
+            <div>
+                <label for="role">Log in as:</label><br>
+                <select id="role" name="role_id" required>
+                    <option value="" disabled selected>-- Select Role --</option>
+                    <option value="1">Volunteer Driver</option>
+                    <option value="2">Passenger</option>
+                    <option value="3">Admin</option>
+                    <option value="4">Reward Manager</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit" name="login_btn">Login</button>
+            
+        </form>
+
+        <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 15px; display: flex; align-items: center; gap: 8px;">
+            <label for="adminEmail" style="font-size: 13px; font-weight: bold; color: #555; white-space: nowrap;">Contact Admin:</label>
+            <input type="text" id="adminEmail" value="carshareadmin@gmail.com" readonly onclick="this.select();" 
+                style="flex-grow: 1; padding: 5px; background: #f1f1f1; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; cursor: text;"
+            >
+        </div>
+
+        <p>Don't have an account? <a href="RegisterPage.html">Register here</a></p>
+    </div>
+</body>
+</html>

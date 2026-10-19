@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details Output</title>
+</head>
+<body>
+
+    <h2>User Details</h2>
+
+    <div id="outputArea">
+        <p>Loading details...</p>
+    </div>
+
+    <br>
+    <a href="search.html"><button>Back to Search</button></a>
+
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        var emailParam = urlParams.get('email');
+
+        async function fetchUserDetails() {
+            var outputDiv = document.getElementById("outputArea");
+
+            if (!emailParam) {
+                outputDiv.innerHTML = "<p>No email parameter found in URL.</p>";
+                return;
+            }
+
+            try {
+                var response = await fetch("get_details.php?email=" + encodeURIComponent(emailParam));
+                var result = await response.json();
+
+                if (result.status === "success") {
+                    var data = result.data;
+                    outputDiv.innerHTML = 
+                        "<p><b>Volunteer ID:</b> " + data.VolunteerID + "</p>" +
+                        "<p><b>User ID:</b> " + data.UserID + "</p>" +
+                        "<p><b>Driver Name:</b> " + data.DriverName + "</p>" +
+                        "<p><b>Username:</b> " + data.Username + "</p>" +
+                        "<p><b>Email:</b> " + data.Email + "</p>" +
+                        "<p><b>Current Points:</b> " + data.CurrentPoints + "</p>";
+                } else {
+                    outputDiv.innerHTML = "<p>" + result.message + "</p>";
+                }
+            } catch (err) {
+                outputDiv.innerHTML = "<p>Error connecting to server.</p>";
+            }
+        }
+
+        fetchUserDetails();
+    </script>
+
+</body>
+</html>
